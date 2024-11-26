@@ -16,16 +16,15 @@ type StoryMetadataType = {
 const typedStories: StoryMetadataType[] = stories;
 
 export default function Home() {
-  const [audioEnabled, setAudioEnabled] = useState<boolean>(false);
-  const [imageEnabled, setImageEnabled] = useState<boolean>(false);
+  const [audioEnabled, setAudioEnabled] = useState<number>(0);
+  const [imageEnabled, setImageEnabled] = useState<number>(0);
 
   function toggleAudio() {
-    console.log('toggleAudio', audioEnabled);
-    setAudioEnabled(prev => !prev);
+    setAudioEnabled(prev => prev === 1 ? 0 : 1);
   }
 
   function toggleImage() {
-    setImageEnabled(prev => !prev);
+    setImageEnabled(prev => prev === 1 ? 0 : 1);
   }
 
   return (
@@ -36,7 +35,10 @@ export default function Home() {
             key={story.identifier}
             href={{
               pathname: `/${story.identifier}`,
-              query: { audio: audioEnabled, image: imageEnabled },
+              query: {
+                audio: audioEnabled === 1,
+                image: imageEnabled === 1
+              },
             }}
             className="text-primary hover:underline"
           >
