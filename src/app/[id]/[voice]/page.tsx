@@ -108,7 +108,7 @@ export default function Story({
           className="text-4xl font-semibold">Simple Read
         </Link>
       </header>
-      <div className='flex flex-col gap-8 mt-5 max-w-screen-xl m-auto items-center relative'>
+      <div className='flex flex-col gap-8 mt-5 max-w-screen-lg m-auto items-center relative'>
         {showImage && (
           <Image
             src={storyImage}

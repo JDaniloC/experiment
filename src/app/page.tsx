@@ -74,7 +74,7 @@ export default function Home() {
             </select>
           </div>
           <audio
-            src={`/voices/${selectedVoice}.mp3`}
+            src={`/static/voices/${selectedVoice}.mp3`}
             controls
           ></audio>
         </div>
