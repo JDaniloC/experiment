@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +19,7 @@ export default function Home() {
   const [audioEnabled, setAudioEnabled] = useState<boolean>(false);
   const [imageEnabled, setImageEnabled] = useState<boolean>(false);
   const [selectedVoice, setSelectedVoice] = useState<string>("will");
+  const [voice, setVoice] = useState<string>("");
 
   function toggleAudio() {
     setAudioEnabled(prev => !prev);
@@ -27,6 +28,14 @@ export default function Home() {
   function toggleImage() {
     setImageEnabled(prev => !prev);
   }
+
+  useEffect(() => {
+    if (!audioEnabled && !imageEnabled) {
+      setVoice("");
+    } else {
+      setVoice(selectedVoice);
+    }
+  }, [audioEnabled, imageEnabled, selectedVoice]);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -79,18 +88,18 @@ export default function Home() {
           ></audio>
         </div>
       </header>
-      <main className="flex flex-wrap gap-8 row-start-2 items-center sm:items-start">
+      <main className="flex flex-wrap gap-8 row-start-2 items-center sm:items-start justify-center">
         {typedStories.map((story) => (
           <Link
             key={story.identifier}
             href={{
-              pathname: `/${story.identifier}/${selectedVoice}`,
+              pathname: `/${story.identifier}/${voice}`,
               query: {
                 audio: audioEnabled,
                 image: imageEnabled
               },
             }}
-            className="relative text-primary flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            className="relative text-primary flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 flex-grow"
           >
             <Image
               src={story.image}
