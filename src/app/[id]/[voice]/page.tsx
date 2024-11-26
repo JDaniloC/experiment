@@ -79,9 +79,9 @@ export default function Story({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowRight' && false) {
+      if (event.key === 'ArrowRight') {
         setPage(prevPage => Math.min(prevPage + 1, story.length - 1));
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === 'ArrowLeft' && !audioAllowed) {
         setPage(prevPage => Math.max(prevPage - 1, 0));
       } else if (event.key === ' ' && audioAllowed) {
         event.preventDefault();
