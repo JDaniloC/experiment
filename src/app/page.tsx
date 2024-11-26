@@ -40,7 +40,9 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <header className='flex justify-items-center justify-between m-3 w-full'>
-        <h1 className="text-4xl font-semibold">Simple Read</h1>
+        <h1 className="text-4xl font-semibold">
+          <span className="text-[#0994cc]">S</span>imple <span className="text-[#0994cc]">R</span>ead
+        </h1>
         <div className="flex gap-4">
           <div className="flex gap-4">
             <input

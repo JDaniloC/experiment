@@ -108,7 +108,8 @@ export default function Story({
       <header className='flex justify-items-center justify-between w-full'>
         <Link
           href={{ pathname: `/` }}
-          className="text-4xl font-semibold">Simple Read
+          className="text-4xl font-semibold">
+          <span className="text-[#0994cc]">S</span>imple <span className="text-[#0994cc]">R</span>ead
         </Link>
       </header>
       <div className='flex flex-col gap-8 mt-5 max-w-screen-lg m-auto items-center relative'>
