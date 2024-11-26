@@ -3,78 +3,78 @@
     "identifier": "otzi",
     "title": "ÖTZI, O HOMEM DO GELO",
     "classification": "18 anos A",
-    "image": "/stories/otzi/0.png"
+    "image": "/static/stories/otzi/0.png"
   },
   {
     "identifier": "annapurna",
     "title": "A ANNAPURNA",
     "classification": "18 anos B",
-    "image": "/stories/annapurna/0.png"
+    "image": "/static/stories/annapurna/0.png"
   },
   {
     "identifier": "papuas",
     "title": "OS PAPUAS AUSTRALIANOS",
     "classification": "18 anos C",
-    "image": "/stories/papuas/0.png"
+    "image": "/static/stories/papuas/0.png"
   },
   {
     "identifier": "eskimo",
     "title": "OS ESQUIMÓS",
     "classification": "18 anos D",
-    "image": "/stories/eskimo/0.png"
+    "image": "/static/stories/eskimo/0.png"
   },
   {
     "identifier": "ark",
     "title": "A ARCA DO FIM DO MUNDO",
     "classification": "Faculdade",
-    "image": "/stories/ark/0.png"
+    "image": "/static/stories/ark/0.png"
   },
   {
     "identifier": "trash",
     "title": "O LIXO QUE CIRCULA EM TORNO DA TERRA",
     "classification": "15 anos D",
-    "image": "/stories/trash/0.png"
+    "image": "/static/stories/trash/0.png"
   },
   {
     "identifier": "polar",
     "title": "O LIXO QUE CIRCULA EM TORNO DA TERRA",
     "classification": "15 anos C",
-    "image": "/stories/polar/0.png"
+    "image": "/static/stories/polar/0.png"
   },
   {
     "identifier": "moais",
     "title": "O MISTÉRIO DOS MOAIS DA ILHA DE PÁSCOA",
     "classification": "15 anos B",
-    "image": "/stories/moais/0.png"
+    "image": "/static/stories/moais/0.png"
   },
   {
     "identifier": "ants",
     "title": "FORMIGAS, ENGENHEIRAS DO ECOSSISTEMA",
     "classification": "15 anos A",
-    "image": "/stories/ants/0.png"
+    "image": "/static/stories/ants/0.png"
   },
   {
     "identifier": "mammals",
     "title": "A CAPACIDADE ADAPTATIVA DOS MAMÍFEROS",
     "classification": "12 anos D",
-    "image": "/stories/mammals/0.png"
+    "image": "/static/stories/mammals/0.png"
   },
   {
     "identifier": "fire",
     "title": "O USO DO FOGO NA CULINÁRIA PRÉ-HISTÓRICA",
     "classification": "12 anos C",
-    "image": "/stories/fire/0.png"
+    "image": "/static/stories/fire/0.png"
   },
   {
     "identifier": "prehistory",
     "title": "PALEOLÍTICOS E NEOLÍTICOS",
     "classification": "12 anos B",
-    "image": "/stories/prehistory/0.png"
+    "image": "/static/stories/prehistory/0.png"
   },
   {
     "identifier": "pandas",
     "title": "PROTEÇÃO AOS PANDAS GIGANTES DA CHINA",
     "classification": "12 anos A",
-    "image": "/stories/pandas/0.png"
+    "image": "/static/stories/pandas/0.png"
   }
 ]

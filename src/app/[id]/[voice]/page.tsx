@@ -41,8 +41,8 @@ export default function Story({
       setIdentifier(identifier);
       setStory(typedStories[identifier]);
       setStoryText(typedStories[identifier][page]);
-      setStoryImage(`/stories/${identifier}/${page}.png`);
-      setStoryAudio(`/stories/${identifier}/${voice}/${page}.mp3`);
+      setStoryImage(`/static/stories/${identifier}/${page}.png`);
+      setStoryAudio(`/static/stories/${identifier}/${voice}/${page}.mp3`);
       
       const audioEnabled = searchParams.get('audio');
       setAudioAllowed(audioEnabled === 'true');
@@ -55,8 +55,8 @@ export default function Story({
   useEffect(() => {
     if (story.length > 0) {
       setStoryText(story[page]);
-      setStoryImage(`/stories/${identifier}/${page}.png`);
-      setStoryAudio(`/stories/${identifier}/${voice}/${page}.mp3`);
+      setStoryImage(`/static/stories/${identifier}/${page}.png`);
+      setStoryAudio(`/static/stories/${identifier}/${voice}/${page}.mp3`);
     }
   }, [page, story]);
 
