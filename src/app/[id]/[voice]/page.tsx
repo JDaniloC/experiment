@@ -29,7 +29,7 @@ export default function Story({
   const [imageAllowed, setImageAllowed] = useState<boolean>(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState<number>(-1);
   const searchParams = useSearchParams()
 
   useEffect(() => {
@@ -37,6 +37,7 @@ export default function Story({
       const { id: identifier, voice } = await params;
       if (!Object.keys(typedStories).includes(identifier)) return;
 
+      setPage(0);
       setVoice(voice);
       setIdentifier(identifier);
       setStory(typedStories[identifier]);
@@ -49,8 +50,8 @@ export default function Story({
       const imageEnabled = searchParams.get('image');
       setImageAllowed(imageEnabled === 'true');
     }
-    verifyIdentifier();
-  }, [params]);
+    if (page === -1) verifyIdentifier();
+  }, [params, page, searchParams]);
 
   useEffect(() => {
     if (story.length > 0) {
@@ -58,7 +59,7 @@ export default function Story({
       setStoryImage(`/static/stories/${identifier}/${page}.png`);
       setStoryAudio(`/static/stories/${identifier}/${voice}/${page}.mp3`);
     }
-  }, [page, story]);
+  }, [page, story, identifier]);
 
   useEffect(() => {
     if (storyAudio && audioAllowed) {
@@ -75,7 +76,7 @@ export default function Story({
         console.error('Error playing audio:', error);
       });
     }
-  }, [storyAudio, audioAllowed]);
+  }, [storyAudio, audioAllowed, story.length]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -99,7 +100,7 @@ export default function Story({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [story.length]);
+  }, [story.length, audioAllowed]);
 
   const showImage = imageAllowed && storyImage !== null && storyImage !== "";
 
